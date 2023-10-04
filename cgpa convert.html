@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>go</title>
+
+<style type="text/css">
+
+
+#new
+{
+
+color: black;
+text-align: center;
+justify-content: center;
+margin-left: 150px;
+border: 2px solid skyblue;
+height:24px;
+width:180px;
+border-radius: 10px;
+}
+
+#new:hover
+{
+
+border: 2px solid red;
+
+}
+
+#co3
+{
+
+margin-left:150px;
+color: black;
+
+}
+
+button
+{
+
+margin-left: 170px;
+height:25px;
+width:150px;
+border-radius:10px;
+text-align: center;
+border: 1px solid lightseagreen
+}
+#co4
+{
+
+text-align: center;
+color: red;
+margin-left: 90px;
+}
+</style>
+
+</head>
+<body>
+
+ <h2 id="co4"> cgpa into percentage</h2>
+
+<input type="number" id="new" placeholder="Enter you cgpa">
+
+<h3 id="co3">result</h3>
+
+<button onclick="to()">submit</button>
+
+
+</body>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script type="text/javascript">
+function to()
+{
+var fsum = document.getElementById("new").value
+
+var cgpa="9.5"
+
+tot = parseFloat(fsum)  *  parseFloat(cgpa)
+
+document.getElementById("co3").innerHTML = tot
+
+
+}
+var t = gsap.timeline()
+
+t.from("#co4",
+{
+   y:-200,
+   duration:1,
+   delay:1,
+   opacity:0
+
+
+})
+
+t.from("#new",{
+
+   scale:0,
+  duration:1,
+  delay:2
+
+
+})
+
+t.from("#co3",{
+
+
+   x:-500,
+   duation:3,
+   delay:2
+
+})
+
+t.from("button",{
+
+
+    x:1000,
+    duration:2,
+    delay: 1
+
+
+})
+</script>
+
+
+
+
+
+</html>
